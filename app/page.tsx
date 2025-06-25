@@ -66,10 +66,22 @@ export default function Home() {
         </aside>
         <main className="flex w-full flex-col overflow-hidden py-6">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-            <Button>
-              Create Alert <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+              <div className="flex items-center space-x-4 mt-2">
+                <div className="flex items-center space-x-2">
+                  <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm text-muted-foreground">System Online</span>
+                </div>
+                <div className="text-sm text-muted-foreground">Last updated: {new Date().toLocaleTimeString()}</div>
+              </div>
+            </div>
+            <div className="flex space-x-2">
+              <Button variant="outline">Export Data</Button>
+              <Button>
+                Create Alert <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </div>
           <Tabs defaultValue="overview" className="mt-6">
             <TabsList>
@@ -81,9 +93,9 @@ export default function Home() {
               <MetricsCards />
               <div className="grid gap-6 md:grid-cols-2">
                 <Card>
-                  <CardHeader className="bg-white text-black">
-                    <CardTitle className="text-black">Recent Alerts</CardTitle>
-                    <CardDescription className="">
+                  <CardHeader className="bg-gradient-to-r from-gray-900 to-black text-white">
+                    <CardTitle className="text-white">Recent Alerts</CardTitle>
+                    <CardDescription className="text-gray-300">
                       Latest fraud alerts detected by the system
                     </CardDescription>
                   </CardHeader>
