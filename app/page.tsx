@@ -81,9 +81,11 @@ export default function Home() {
               <MetricsCards />
               <div className="grid gap-6 md:grid-cols-2">
                 <Card>
-                  <CardHeader>
-                    <CardTitle>Recent Alerts</CardTitle>
-                    <CardDescription>Latest fraud alerts detected by the system</CardDescription>
+                  <CardHeader className="bg-black text-white">
+                    <CardTitle className="text-white">Recent Alerts</CardTitle>
+                    <CardDescription className="text-gray-300">
+                      Latest fraud alerts detected by the system
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <RecentAlerts />
